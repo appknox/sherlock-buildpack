@@ -7,5 +7,6 @@
 #
 
 
-echo "Works, because we know what should be here :P "
+echo "Sherlock"
 exit 0
+# Because we only care about getting sherlock to work
