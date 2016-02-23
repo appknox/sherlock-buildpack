@@ -9,7 +9,13 @@
 export BUILD_DIR=$1
 export CACHE_DIR=$2
 export ENV_DIR=$3
-echo "Printing everyintg..."
+echo "Dependencies and compiler"
 echo "==================================================="
 echo "build: $BUILD_DIR, cache: $CACHE_DIR, env: $ENV_DIR"
+echo "==================================================="
+ls $BUILD_DIR
+echo "==================================================="
+ls $CACHE_DIR
+echo "==================================================="
+ls $ENV_DIR
 echo "==================================================="

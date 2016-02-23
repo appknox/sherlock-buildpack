@@ -7,7 +7,9 @@
 #
 
 export BUILD_DIR=$1
-echo "Printing everyintg..."
+echo "Making a release"
 echo "==================================================="
 echo "build: $BUILD_DIR"
 echo "==================================================="
+echo "==================================================="
+ls $ENV_DIR
