@@ -9,3 +9,8 @@
 export BUILD_DIR=$1
 export CACHE_DIR=$2
 echo "Dependencies and compiler"
+
+echo "==========================================================================="
+echo "which python"
+which python
+echo "==========================================================================="
