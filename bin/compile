@@ -13,4 +13,9 @@ echo "Dependencies and compiler"
 echo "==========================================================================="
 echo "which python"
 which python
+which python3
+which pip
+which pip3
+python --version
+python3 --version
 echo "==========================================================================="
