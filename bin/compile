@@ -15,7 +15,7 @@ ENV_DIR=$3  # Deis doent send this
 PY_VERSION='3.5.1'
 PY_NAME="Python-"$PY_VERSION
 PY_TGZ=$PY_NAME".tgz"
-PY_PATH=$BUILD_DIR"/.python"
+PY_PATH="/app/.python"
 BIN_DIR=$(cd $(dirname $0); pwd)
 ROOT_DIR=$(dirname $BIN_DIR)
 WORK_DIR=`pwd`
@@ -32,7 +32,7 @@ cd $CACHE_DIR
 	curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
 	tar -xzvf $PY_TGZ
 	cd $PY_NAME
-	# mkdir -p $PY_PATH
+	mkdir -p $PY_PATH
 	./configure  --prefix=$PY_PATH --enable-shared
 	make
 	make install
