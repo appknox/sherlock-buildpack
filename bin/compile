@@ -6,12 +6,19 @@
 # Distributed under terms of the MIT license.
 #
 
-export BUILD_DIR=$1
-export CACHE_DIR=$2
-export WORK_DIR=`pwd`
-export PY_VERSION='3.5.1'
-export PY_NAME="Python-"$PY_VERSION
-export PY_TGZ=$PY_NAME".tgz"
+set -eo pipefail
+
+PY_VERSION='3.5.1'
+PY_NAME="Python-"$PY_VERSION
+PY_TGZ=$PY_NAME".tgz"
+PY_ENV="/app/env"
+BIN_DIR=$(cd $(dirname $0); pwd)
+ROOT_DIR=$(dirname $BIN_DIR)
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3  # Deis doent send this
+WORK_DIR=`pwd`
+
 echo "Dependencies and compiler"
 
 echo "==========================================================================="
@@ -22,8 +29,10 @@ cd $CACHE_DIR
 	tar -xzvf $PY_TGZ
 	cd $PY_NAME
 	./configure --prefix=/usr/local
-	make
-	make install
+	sudo make
+	sudo make install
+	pyvenv /app/env
+	source /app/env/bin/activate
 # fi
 which python
 which pip

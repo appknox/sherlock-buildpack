@@ -5,6 +5,6 @@
 #
 # Distributed under terms of the MIT license.
 #
-
+set -eo pipefail
 export BUILD_DIR=$1
 echo "Making a release"
