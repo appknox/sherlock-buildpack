@@ -8,16 +8,20 @@
 
 set -e pipefail
 
-PY_VERSION='3.5.1'
-PY_NAME="Python-"$PY_VERSION
-PY_TGZ=$PY_NAME".tgz"
-PY_ENV="/app/env"
-BIN_DIR=$(cd $(dirname $0); pwd)
-ROOT_DIR=$(dirname $BIN_DIR)
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3  # Deis doent send this
+
+PY_VERSION='3.5.1'
+PY_NAME="Python-"$PY_VERSION
+PY_TGZ=$PY_NAME".tgz"
+PY_PATH=$BUILD_DIR"/.python"
+BIN_DIR=$(cd $(dirname $0); pwd)
+ROOT_DIR=$(dirname $BIN_DIR)
 WORK_DIR=`pwd`
+export PATH=$PY_PATH/bin:$PATH
+export PYTHONUNBUFFERED=1
+export LANG=en_US.UTF-8
 
 echo "Dependencies and compiler"
 
@@ -28,11 +32,10 @@ cd $CACHE_DIR
 	curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
 	tar -xzvf $PY_TGZ
 	cd $PY_NAME
-	./configure --prefix=/usr/local
-	sudo make
-	sudo make install
-	pyvenv /app/env
-	source /app/env/bin/activate
+	mkdir -p $PY_PATH
+	./configure --prefix=$PY_PATH
+	make
+	make install
 # fi
 which python
 which pip
