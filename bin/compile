@@ -17,13 +17,13 @@ echo "Dependencies and compiler"
 echo "==========================================================================="
 echo "which python"
 cd $CACHE_DIR
-pwd
-curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
-tar -xzvf $PY_TGZ
-cd $PY_NAME
-./configure
-make
-make install
+ls
+# curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
+# tar -xzvf $PY_TGZ
+# cd $PY_NAME
+# ./configure
+# make
+# make install
 which python
 which pip
 python --version
