@@ -33,7 +33,7 @@ cd $CACHE_DIR
 	tar -xzvf $PY_TGZ
 	cd $PY_NAME
 	# mkdir -p $PY_PATH
-	./configure  # --prefix=$PY_PATH
+	./configure  --prefix=$PY_PATH --enable-shared
 	make
 	make install
 # fi
