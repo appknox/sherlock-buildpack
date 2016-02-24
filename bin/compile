@@ -29,17 +29,16 @@ echo "==========================================================================
 echo "which python"
 cd $CACHE_DIR
 # if [[ ! -f $PY_TGZ ]]; then
-	# curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
-	# tar -xzvf $PY_TGZ
-	# cd $PY_NAME
+	curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
+	tar -xzvf $PY_TGZ
+	cd $PY_NAME
 	# mkdir -p $PY_PATH
-	# ./configure --prefix=$PY_PATH
-	# make
-	# make install
+	./configure  # --prefix=$PY_PATH
+	make
+	make install
 # fi
 which python
 which pip
 python --version
 python3 --version
-uname -a
 echo "==========================================================================="
