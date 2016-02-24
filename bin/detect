@@ -5,7 +5,7 @@
 #
 # Distributed under terms of the MIT license.
 #
-set -eo pipefail
+set -e pipefail
 echo "Sherlock"
 exit 0
 # Because we only care about getting sherlock to work

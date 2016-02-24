@@ -6,7 +6,7 @@
 # Distributed under terms of the MIT license.
 #
 
-set -eo pipefail
+set -e pipefail
 
 PY_VERSION='3.5.1'
 PY_NAME="Python-"$PY_VERSION
