@@ -18,6 +18,7 @@ echo "==========================================================================
 echo "which python"
 cd $CACHE_DIR
 ls
+ls "Python 2.7.6"
 # curl -O https://www.python.org/ftp/python/$PY_VERSION/$PY_TGZ
 # tar -xzvf $PY_TGZ
 # cd $PY_NAME
